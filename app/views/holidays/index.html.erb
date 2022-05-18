@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Holidays</h1>
+
+<div id="holidays">
+  <% @holidays.each do |holiday| %>
+    <%# render holiday %>
+    <div id="<%= dom_id holiday %>">
+  <p>
+    <strong>Startdate:</strong>
+    <%= holiday.startdate %>
+  </p>
+
+  <p>
+    <strong>Enddate:</strong>
+    <%= holiday.enddate %>
+  </p>
+
+  <p>
+    <strong>Employee:</strong>
+    <%= holiday.employee_id %> (<%= get_employee_name_by_id(holiday.employee_id) %>)
+  </p>
+
+</div>
+    <p>
+      <%= link_to "Show this holiday", holiday %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New holiday", new_holiday_path %>

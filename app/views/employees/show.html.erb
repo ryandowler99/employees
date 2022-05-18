@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @employee %>
+
+<div>
+  <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
+  <%= link_to "Back to employees", employees_path %>
+
+  <%= button_to "Destroy this employee", @employee, method: :delete %>
+</div>
+<h1>Holidays Booked</h1>
+<div id="holidays">
+  <% @employee_holidays.each do |em| %>
+  <p>
+    <strong>Startdate:</strong>
+    <%= em.startdate %>
+  </p>
+
+  <p>
+    <strong>Enddate:</strong>
+    <%= em.enddate %>
+  </p>
+  <p>
+      <%= link_to "VIEW", holiday_path %>
+    </p>
+</div>
+  <% end %>
+</div>
+
