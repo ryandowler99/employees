@@ -1,4 +1,7 @@
 <div id="<%= dom_id holiday %>" class="well well-lg col-lg-3">
+<% @duration = ((holiday.startdate.jd..holiday.enddate.jd).count) -1 %>
+<h6><%= "DURATION: #{@duration} ( Days off)" %></h6>
+<hr />
   <p>
     <strong>Startdate:</strong>
     <%= holiday.startdate %>
