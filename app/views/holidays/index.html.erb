@@ -2,9 +2,9 @@
 
 <h1>Holidays</h1>
 
-<div id="holidays">
+<div id="holidays" class="col-lg-12 row">
   <% @holidays.each do |holiday| %>
-    <%# render holiday %>
+    <div class="well well-lg col-lg-4">
     <div id="<%= dom_id holiday %>">
   <p>
     <strong>Startdate:</strong>
@@ -23,9 +23,10 @@
 
 </div>
     <p>
-      <%= link_to "Show this holiday", holiday %>
+      <%= link_to "Show this holiday", holiday, class:"btn btn-info" %>
     </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New holiday", new_holiday_path %>
+<%= link_to "New holiday", new_holiday_path, class:"btn btn-info" %>

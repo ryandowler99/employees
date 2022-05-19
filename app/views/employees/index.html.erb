@@ -2,14 +2,16 @@
 
 <h1>Employees</h1>
 
-<div id="employees">
+<div id="employees" class="col-lg-12 row">
   <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-      <%= link_to "New holiday for: #{employee.name}", :controller => holidays_path, :action => :new, :id =>employee.id %>
-    </p>
+    <div class="well well-lg col-lg-3">
+      <%= render employee %>
+      <p class="employeeIndexBtns">
+        <%= link_to "Show this employee", employee, class:"btn btn-info" %>
+        <%= link_to "New holiday for: #{employee.name}", :controller => holidays_path, :action => :new, :id =>employee.id, class:"btn btn-info" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New employee", new_employee_path %>
+<%= link_to "New employee", new_employee_path, class:"btn btn-success" %>

@@ -21,14 +21,16 @@ class HolidaysController < ApplicationController
 
   # GET /holidays/new
   def new
-    @employee = Employee.find(params[:id])
-    @holiday = @employee.holidays.build
+    # @employee = Employee.find(params[:id])
+    # @holiday = @employee.holidays.build
    # @employee = Employee.find(1)
     #@holiday = Holiday.new
   end
 
   # GET /holidays/1/edit
   def edit
+    @employee = Employee.find(params[:id])
+    @holiday = @employee.holidays.build
    
   end
 

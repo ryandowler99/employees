@@ -1,4 +1,6 @@
 <p style="color: green"><%= notice %></p>
+<% @link_text = "Back to Employee:" + @employee_assignned_name.upcase%>
+<%= link_to @link_text, employee_path %>
 
 <%=  @employeeAssigned %>
 
@@ -7,5 +9,5 @@
   <%= link_to "Edit this holiday", edit_holiday_path(@holiday) %> |
   <%= link_to "Back to holidays", holidays_path %>
 
-  <%= button_to "Destroy this holiday", @holiday, method: :delete %>
+  <%= button_to "Destroy this holiday", @holiday, method: :delete, class:"btn btn-danger" %>
 </div>

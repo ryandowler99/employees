@@ -1,4 +1,5 @@
 <h1>Editing holiday</h1>
+ (<%= link_to "Back to Employee", employee_path %>)
 
 <%= render "form", holiday: @holiday %>
 
@@ -6,5 +7,6 @@
 
 <div>
   <%= link_to "Show this holiday", @holiday %> |
-  <%= link_to "Back to holidays", holidays_path %>
+  <%= link_to "Go to ALL holidays", holidays_path %>
+  <%= link_to "Back to Employee (#{@employee_assignned_name}) ", employee_path %>
 </div>
