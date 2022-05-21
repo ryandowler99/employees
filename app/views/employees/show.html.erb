@@ -10,10 +10,12 @@
 </div>
 </div>
 <hr/>
-<h1><%= "#{@employee.name.upcase}'s Holidays" %></h1>
-<div id="holidays" class="col-lg-12 row">
+<div class="row">
+<h1 class="displayInline col-lg-6"><%= "#{@employee.name.upcase}'s Holidays" %></h1>
+<h5 class="displayInline col-lg-4"> <%= link_to "Add Holiday", :controller => holidays_path, :action => :new, :id =>@employee.id, class:"btn btn-info" %></h5></div>
+<div id="holidays" class="col-lg-12 row displayInline row">
   <% @employee_holidays.each do |em| %>
-   <div class="well well-lg col-lg-4">
+   <div class="well well-lg col-lg-4 displayInlineBlock holidaysDiv">
   <p>
     <strong>Startdate:</strong>
     <%= em.startdate %>
